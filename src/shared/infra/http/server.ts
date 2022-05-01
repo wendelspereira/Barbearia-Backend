@@ -1,9 +1,11 @@
 import express from "express";
 import { createConnection } from "typeorm";
 import { routes } from "../http/routes";
+import cors from "cors";
 createConnection();
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 

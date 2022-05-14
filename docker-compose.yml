@@ -1,21 +1,27 @@
 version: "3.7"
 
 services:
-  database_ignite:
+  app:
+    build: .
+    container_name: app_barbearia
+    restart: always
+    depends_on:
+      - db_barbearia
+    ports:
+      - 3333:3333
+    env_file:
+      - .env
+    volumes:
+      - ./:/usr/app
+
+  db_barbearia:
     image: postgres
-    container_name: database_barbearia
+    container_name: db_barbearia
     restart: always
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_USER=barbearia
-      - POSTGRES_PASSWORD=1234
-      - POSTGRES_DB=barbearia
-    volumes:
-      - pgdata:/data/postgres
-
-
-
-volumes:
-  pgdata:
-    driver: local
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+ 

@@ -3,6 +3,7 @@ import { Scheduling } from "../../../entities/Scheduling";
 import { ISchedulingRepository } from "../../../repository/ISchedulingRepository";
 
 class SchedulingRepository implements ISchedulingRepository {
+  schedulings: any;
 
   async create({client, services, schedulingHours}: ICreateSchedulingDTO): Promise<void> {
     

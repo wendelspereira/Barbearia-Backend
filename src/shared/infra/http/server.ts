@@ -3,6 +3,7 @@ import { createConnection } from "typeorm";
 import { routes } from "../http/routes";
 
 const app = express();
+
 createConnection().then(async (con) => {
   app.use(express.json());
   app.use(routes);

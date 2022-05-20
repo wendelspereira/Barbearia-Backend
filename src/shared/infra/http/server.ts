@@ -1,7 +1,9 @@
+import dotenv from "dotenv";
 import express from "express";
 import { createConnection } from "typeorm";
 import { routes } from "../http/routes";
 
+dotenv.config();
 const app = express();
 
 createConnection().then(async (con) => {

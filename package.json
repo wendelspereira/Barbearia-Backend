@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli --config ./ormconfig.ts",
-    "build": "tsc --build",
-    "start": "tsc --build && node ./dist/src/shared/infra/http/server.js"
+    "build": "tsc",
+    "start": "tsc && node ./dist/src/shared/infra/http/server.js"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +25,7 @@
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.14.1",
     "typeorm": "^0.2.45",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.4"
   },
   "dependencies": {
     "@types/uuid": "^8.3.4",
@@ -36,6 +36,7 @@
     "nano": "^10.0.0",
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
+    "tsc": "^2.0.4",
     "uuid": "^8.3.2"
   }
 }

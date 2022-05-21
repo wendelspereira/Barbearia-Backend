@@ -1,3 +1,7 @@
+Dockerfile
+docker-compose.yml
+.dockerignore
+
 # Logs
 logs
 *.log

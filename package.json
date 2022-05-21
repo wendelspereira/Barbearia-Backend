@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "build": "yarn tsc",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli --config ./ormconfig.ts",
     "start": "node dist/src/shared/infra/http/server.js"

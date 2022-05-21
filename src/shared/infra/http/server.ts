@@ -5,8 +5,8 @@ import { routes } from "../http/routes";
 
 dotenv.config();
 const app = express();
-
-createConnection().then(async (con) => {
+const host = process.env.DATABASE_HOST
+createConnection(String(host)).then(async (con) => {
   app.use(express.json());
   app.use(routes);
   app.listen(process.env.PORT || 3333, () => console.log("Server is running!"));

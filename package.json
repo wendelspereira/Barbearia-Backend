@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "./node_modules/typescript/bin/tsc",
-    "build": "yarn tsc",
+    "build": "npm run tsc",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli --config ./ormconfig.ts",
     "start": "node dist/src/shared/infra/http/server.js"
@@ -37,7 +37,7 @@
     "nano": "^10.0.0",
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
-    "tsc": "^2.0.4",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "yarn": "^1.22.18"
   }
 }

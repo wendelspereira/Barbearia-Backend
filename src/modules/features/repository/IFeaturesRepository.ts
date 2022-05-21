@@ -1,5 +1,5 @@
 import { ICreateFeatureDTO } from "../dtos/ICreateFeature";
-import { Feature } from "../infra/typeorm/entities/Fetarure";
+import { Feature } from "../infra/typeorm/entities/Feature";
 
 interface IFeaturesRepository {
   create: (data: ICreateFeatureDTO) => Promise<void>;

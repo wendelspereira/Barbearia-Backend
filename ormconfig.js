@@ -13,14 +13,14 @@ module.exports = {
     },
   },
 
-  migrations: ["./dist/src/shared/infra/typeorm/migrations/*.ts"],
+  migrations: ["./dist/src/shared/infra/typeorm/migrations/*.js"],
 
   cli: {
     migrationsDir: "./dist/src/shared/infra/typeorm/migrations",
   },
 
   entities: [
-    "./dist/src/modules/accounts/infra/typeorm/entities/*.ts",
-    "./dist/src/modules/features/infra/typeorm/entities/*.ts",
+    "./dist/src/modules/accounts/infra/typeorm/entities/*.js",
+    "./dist/src/modules/features/infra/typeorm/entities/*.js",
   ],
 };

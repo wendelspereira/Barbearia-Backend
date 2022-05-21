@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.accountRoutes = void 0;
+const express_1 = require("express");
+const authenticateController_1 = require("../../../../modules/accounts/useCases/authenticateUser/authenticateController");
+const createUserController_1 = require("../../../../modules/accounts/useCases/createUser/createUserController");
+const accountRoutes = (0, express_1.Router)();
+exports.accountRoutes = accountRoutes;
+const createUserController = new createUserController_1.CreateUserController();
+const authenticateController = new authenticateController_1.AuthenticateController();
+accountRoutes.post("/", createUserController.handle);
+accountRoutes.post("/auth", authenticateController.handle);

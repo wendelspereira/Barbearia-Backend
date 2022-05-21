@@ -1,7 +1,7 @@
 import { getRepository, Repository } from "typeorm";
 import { ICreateFeatureDTO } from "../../../dtos/ICreateFeature";
 import { IFeaturesRepository } from "../../../repository/IFeaturesRepository";
-import { Feature } from "../entities/Fetarure";
+import { Feature } from "../entities/Feature";
 
 class FeaturesRepository implements IFeaturesRepository {
   find() {

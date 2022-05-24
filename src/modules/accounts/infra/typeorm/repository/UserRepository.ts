@@ -1,6 +1,6 @@
 import { getRepository, Repository } from "typeorm";
 import { IUserRepository, IUserDTO } from "../../../repository/IUser";
-import { User } from "../entities/User";
+import { User } from "../entities/User.entity";
 
 class UserRepository implements IUserRepository {
   private repository: Repository<User>;

@@ -2,14 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FeaturesRepository = void 0;
 const typeorm_1 = require("typeorm");
-const Feature_1 = require("../entities/Feature");
+const Feature_entity_1 = require("../entities/Feature.entity");
+const AppError_1 = require("../../../../../shared/errors/AppError");
 class FeaturesRepository {
     find() {
-        throw new Error("Method not implemented.");
+        throw new AppError_1.AppError("Method not implemented.");
     }
     repository;
     constructor() {
-        this.repository = (0, typeorm_1.getRepository)(Feature_1.Feature);
+        this.repository = (0, typeorm_1.getRepository)(Feature_entity_1.Feature);
     }
     async create(data) {
         const feature = this.repository.create({ ...data });

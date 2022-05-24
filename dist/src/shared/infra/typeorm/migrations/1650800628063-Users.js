@@ -27,7 +27,7 @@ class Users1650800628063 {
                 {
                     name: "isAdmin",
                     type: "Boolean",
-                    default: true,
+                    default: false,
                 },
                 {
                     name: "created_at",

@@ -2,6 +2,7 @@ import { IAuthRequest } from "../../dtos/IAuthRequest";
 import { UserRepository } from "../../infra/typeorm/repository/UserRepository";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
+import { AppError } from "../../../../shared/errors/AppError";
 
 interface ITokenResponse {
   user: {
@@ -18,13 +19,13 @@ class AuthenticateUseCase {
     const user = await userRepository.findByEmail(email);
 
     if (!user) {
-      throw new Error("User not found!");
+      throw new AppError("User not found!");
     }
 
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new Error("Email or password is incorrect!");
+      throw new AppError("Email or password is incorrect!");
     }
 
     const token = sign({}, "79dd89f39b52b083b7a801278d584872", {

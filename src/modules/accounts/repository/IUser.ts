@@ -1,4 +1,4 @@
-import { User } from "../infra/typeorm/entities/User";
+import { User } from "../infra/typeorm/entities/User.entity";
 
 interface IUserDTO {
   name: string;

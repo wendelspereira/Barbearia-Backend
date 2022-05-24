@@ -1,4 +1,4 @@
-import { Scheduling } from "../../entities/Scheduling";
+import { Scheduling } from "../../infra/typeorm/entities/Scheduling.entity";
 import { SchedulingRepository } from "../../infra/typeorm/repository/SchedulingRepository";
 
 class ListSchedulingsUseCase {

@@ -1,5 +1,5 @@
 import { ICreateSchedulingDTO } from "../../../dtos/ICreateScheduling";
-import { Scheduling } from "../../../entities/Scheduling";
+import { Scheduling } from "../../../infra/typeorm/entities/Scheduling.entity";
 import { ISchedulingRepository } from "../../../repository/ISchedulingRepository";
 
 class SchedulingRepository implements ISchedulingRepository {

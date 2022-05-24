@@ -9,16 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Feature = void 0;
-const typeorm_1 = require("typeorm");
+exports.Scheduling = void 0;
 const uuid_1 = require("uuid");
-let Feature = class Feature {
+const typeorm_1 = require("typeorm");
+let Scheduling = class Scheduling {
     id;
-    name;
-    description;
-    price;
-    estimatedTime;
-    isAvailable;
+    client; //refactory
+    services; //refactory
+    // services!: IServiceDTO[];
+    schedulingHours;
     created_at;
     constructor() {
         if (!this.id) {
@@ -29,33 +28,25 @@ let Feature = class Feature {
 __decorate([
     (0, typeorm_1.PrimaryColumn)(),
     __metadata("design:type", String)
-], Feature.prototype, "id", void 0);
+], Scheduling.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Feature.prototype, "name", void 0);
+], Scheduling.prototype, "client", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Feature.prototype, "description", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], Feature.prototype, "price", void 0);
+], Scheduling.prototype, "services", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Feature.prototype, "estimatedTime", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Boolean)
-], Feature.prototype, "isAvailable", void 0);
+], Scheduling.prototype, "schedulingHours", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
-], Feature.prototype, "created_at", void 0);
-Feature = __decorate([
-    (0, typeorm_1.Entity)("features"),
+], Scheduling.prototype, "created_at", void 0);
+Scheduling = __decorate([
+    (0, typeorm_1.Entity)("schedulings"),
     __metadata("design:paramtypes", [])
-], Feature);
-exports.Feature = Feature;
+], Scheduling);
+exports.Scheduling = Scheduling;

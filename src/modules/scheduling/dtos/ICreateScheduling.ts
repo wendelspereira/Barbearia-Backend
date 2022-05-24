@@ -10,7 +10,7 @@ interface IClient {
 }
 
 interface ICreateSchedulingDTO {
-  client: IClient;
+  client: string;
   services: IServiceDTO[];
   schedulingHours: string;
 }

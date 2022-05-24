@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserRepository = void 0;
 const typeorm_1 = require("typeorm");
-const User_1 = require("../entities/User");
+const User_entity_1 = require("../entities/User.entity");
 class UserRepository {
     repository;
     constructor() {
-        this.repository = (0, typeorm_1.getRepository)(User_1.User);
+        this.repository = (0, typeorm_1.getRepository)(User_entity_1.User);
     }
     async create({ name, email, password }) {
         console.log(this.repository);

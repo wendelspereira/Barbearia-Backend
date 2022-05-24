@@ -1,4 +1,4 @@
-import { IClient, IServiceDTO } from "../../../dtos/ICreateScheduling";
+import { IServiceDTO } from "../../../dtos/ICreateScheduling";
 import { v4 as uuidv4 } from "uuid";
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 
@@ -8,10 +8,11 @@ class Scheduling {
   id?: string;
 
   @Column()
-  client!: IClient;
+  client?: string; //refactory
   
   @Column()
-  services!: IServiceDTO[];
+  services!: string; //refactory
+  // services!: IServiceDTO[];
   
   @Column()
   schedulingHours!: string;
@@ -23,7 +24,6 @@ class Scheduling {
     if (!this.id) {
       this.id = uuidv4();
     }
-    this.client.isWhatsapp = true;
   }
 }
 

@@ -1,11 +1,13 @@
 import { getRepository, Repository } from "typeorm";
 import { ICreateFeatureDTO } from "../../../dtos/ICreateFeature";
 import { IFeaturesRepository } from "../../../repository/IFeaturesRepository";
-import { Feature } from "../entities/Feature";
+import { Feature } from "../entities/Feature.entity";
+import { AppError } from "../../../../../shared/errors/AppError";
+
 
 class FeaturesRepository implements IFeaturesRepository {
   find() {
-    throw new Error("Method not implemented.");
+    throw new AppError("Method not implemented.");
   }
   private repository: Repository<Feature>;
   constructor() {

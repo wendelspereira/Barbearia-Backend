@@ -4,10 +4,10 @@ import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 import { routes } from "../http/routes";
 import { AppError } from "../../errors/AppError";
-import createConnection from "../typeorm";
+// import createConnection from "../typeorm";
 dotenv.config();
-createConnection("ec2-52-4-104-184.compute-1.amazonaws.com");
-// import '../typeorm'
+// createConnection();
+import '../typeorm'
 
 const app = express();
 

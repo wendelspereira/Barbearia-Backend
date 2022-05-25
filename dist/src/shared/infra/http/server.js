@@ -9,10 +9,10 @@ const express_1 = __importDefault(require("express"));
 require("express-async-errors");
 const routes_1 = require("../http/routes");
 const AppError_1 = require("../../errors/AppError");
-const typeorm_1 = __importDefault(require("../typeorm"));
+// import createConnection from "../typeorm";
 dotenv_1.default.config();
-(0, typeorm_1.default)("ec2-52-4-104-184.compute-1.amazonaws.com");
-// import '../typeorm'
+// createConnection();
+require("../typeorm");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(routes_1.routes);

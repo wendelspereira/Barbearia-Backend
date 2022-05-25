@@ -7,8 +7,8 @@
     "tsc": "./node_modules/typescript/bin/tsc",
     "build": "tsc",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "start": "ts-node src/shared/infra/http/server",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli --config ./ormconfig.ts",
-    "start": "npm run build && node ./dist/src/shared/infra/http/server.js",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },

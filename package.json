@@ -12,6 +12,7 @@
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",

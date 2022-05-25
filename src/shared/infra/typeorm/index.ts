@@ -20,13 +20,13 @@ const config: any = {
     },
   },
 
-  entities: [`${rootDir}/**/**.entity.${extensionFile}`],
+  entities: [`${rootDir}/**/*.entity.${extensionFile}`],
   migrations: [`${rootDir}/**/migrations/*.${extensionFile}`],
   cli: {
     migrationsDir: `${rootDir}/shared/infra/typeorm/migrations`,
   },
 };
 
-console.log(`${rootDir}/**/**.entity.${extensionFile}`);
+console.log(`${rootDir}/**/*.entity.${extensionFile}`);
 
 createConnection(config).catch((err) => console.log(err));

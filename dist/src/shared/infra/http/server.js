@@ -9,22 +9,26 @@ const express_1 = __importDefault(require("express"));
 require("express-async-errors");
 const routes_1 = require("../http/routes");
 const AppError_1 = require("../../errors/AppError");
-// import createConnection from "../typeorm";
+const typeorm_1 = __importDefault(require("../typeorm"));
 dotenv_1.default.config();
-// createConnection();
-require("../typeorm");
 const app = (0, express_1.default)();
-app.use(express_1.default.json());
-app.use(routes_1.routes);
-app.use((err, request, response, next) => {
-    if (err instanceof AppError_1.AppError) {
-        response.status(err.statusCode).json({
-            message: err.message,
+console.log('Connecting...');
+(0, typeorm_1.default)()
+    .then(() => {
+    console.log('Connected with database');
+    app.use(express_1.default.json());
+    app.use(routes_1.routes);
+    app.use((err, request, response, next) => {
+        if (err instanceof AppError_1.AppError) {
+            response.status(err.statusCode).json({
+                message: err.message,
+            });
+        }
+        return response.status(500).json({
+            status: "Error",
+            message: `Internal server Error - ${err.message}`,
         });
-    }
-    return response.status(500).json({
-        status: "Error",
-        message: `Internal server Error - ${err.message}`,
     });
-});
-app.listen(process.env.PORT || 3333, () => console.log("Server is running!"));
+    app.listen(process.env.PORT || 3333, () => console.log("Server is running!"));
+})
+    .catch((err) => console.log(err));

@@ -1,4 +1,17 @@
-## to day
+## Configurações do estabelecimento
+    > DTOS opening hours
+    [x] create a new openingHour
 
-[] DEVE SER CAPAZ DE REALIZAR UM AGENDAMENTO SIMPLES
-[] DEVE SER CAPAZ DE LISTAR OS AGENDAMENTOS
+    > IRepository
+    [x] ICreate
+    [x] IList
+
+    > [x] entity
+
+
+
+## Agendamento
+    
+## Usuários cadastrados
+
+

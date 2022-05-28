@@ -1,4 +1,4 @@
-import { ICreateFeatureDTO } from "../../dtos/ICreateFeature";
+import { ICreateFeatureDTO } from "../../dtos/ICreateFeatureDTO";
 import { FeaturesRepository } from "../../infra/typeorm/repository/featuresRepository";
 
 class ListFeaturesUseCase {

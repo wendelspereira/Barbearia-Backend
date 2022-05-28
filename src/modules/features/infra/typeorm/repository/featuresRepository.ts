@@ -1,14 +1,14 @@
 import { getRepository, Repository } from "typeorm";
-import { ICreateFeatureDTO } from "../../../dtos/ICreateFeature";
+import { ICreateFeatureDTO } from "../../../dtos/ICreateFeatureDTO";
 import { IFeaturesRepository } from "../../../repository/IFeaturesRepository";
 import { Feature } from "../entities/Feature.entity";
 import { AppError } from "../../../../../shared/errors/AppError";
-
 
 class FeaturesRepository implements IFeaturesRepository {
   find() {
     throw new AppError("Method not implemented.");
   }
+  
   private repository: Repository<Feature>;
   constructor() {
     this.repository = getRepository(Feature);
@@ -29,7 +29,7 @@ class FeaturesRepository implements IFeaturesRepository {
 
     return feature;
   }
-  
+
   async findById(id: string): Promise<Feature | undefined> {
     const feature = await this.repository.findOne(id);
     return feature;

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ICreateFeatureDTO } from "../../dtos/ICreateFeature";
+import { ICreateFeatureDTO } from "../../dtos/ICreateFeatureDTO";
 import { CreateFeatureUseCase } from "./createFeatureUseCase";
 
 class CreateFeatureController {

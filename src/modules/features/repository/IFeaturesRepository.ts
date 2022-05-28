@@ -1,4 +1,4 @@
-import { ICreateFeatureDTO } from "../dtos/ICreateFeature";
+import { ICreateFeatureDTO } from "../dtos/ICreateFeatureDTO";
 import { Feature } from "../infra/typeorm/entities/Feature.entity";
 
 interface IFeaturesRepository {

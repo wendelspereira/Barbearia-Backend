@@ -1,0 +1,17 @@
+import {Router} from "express"
+import { CreateOpeningHoursController } from "../../../../modules/openingHours/useCases/createOpeningHours/createOpeningHoursController";
+import { ListOpeningHoursController } from "../../../../modules/openingHours/useCases/listOpeningHours/listOpeningHoursController";
+
+const openingHoursRoutes = Router();
+const createOpeningHoursController = new CreateOpeningHoursController()
+const listOpeningHoursController = new ListOpeningHoursController()
+
+openingHoursRoutes.post("/", createOpeningHoursController.handle)
+openingHoursRoutes.get("/", listOpeningHoursController.handle)
+
+export { openingHoursRoutes };
+
+
+
+
+

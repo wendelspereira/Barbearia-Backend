@@ -11,8 +11,7 @@
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli --config ./ormconfig.js",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts",
-    "typeorm2": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "migration:run": "npm run typeorm migration:run -- -t=each"
+    "typeorm2": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "keywords": [],
   "author": "",

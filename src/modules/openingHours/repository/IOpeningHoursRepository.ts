@@ -1,9 +1,8 @@
-import { ICreateOpenHoursDTO } from "../dtos/ICreateOpenHoursDTO"
-import { OpeningHours } from "../infra/entities/OpeningHours.entity"
+import { ICreateOpenHoursDTO, IListOpenHoursDTO } from "../dtos/ICreateOpenHoursDTO"
 
 interface IOpeningHoursRepository {
-    create: (data: string) => Promise<void>
-    list: () => Promise<OpeningHours | undefined>
+    create: (data: ICreateOpenHoursDTO) => Promise<void>
+    list: () => Promise<IListOpenHoursDTO | undefined>
 }
 
 export {IOpeningHoursRepository}

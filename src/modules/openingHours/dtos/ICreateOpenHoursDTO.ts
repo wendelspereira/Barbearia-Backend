@@ -1,17 +1,25 @@
 interface IDays {
-    days: "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "satuday"
+  days:
+    | "sunday"
+    | "monday"
+    | "tuesday"
+    | "wednesday"
+    | "thursday"
+    | "friday"
+    | "satuday";
 }
 
 interface IOpeningHours {
-    openingHours: [
-        {day: IDays, hours: [{opening: string, closure: string}]}
-    ]
+  day: IDays;
+  hours: [{ opening: string; closure: string }];
 }
-
 
 interface ICreateOpenHoursDTO {
-    openinghours: IOpeningHours
+  openinghours: IOpeningHours[];
 }
 
+interface IListOpenHoursDTO {
+  openinghours: IOpeningHours[];
+}
 
-export {ICreateOpenHoursDTO}
+export { ICreateOpenHoursDTO, IListOpenHoursDTO };

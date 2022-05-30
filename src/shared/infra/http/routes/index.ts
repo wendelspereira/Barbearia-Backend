@@ -1,6 +1,7 @@
 import express from "express";
 import { schedulingRoutes } from "../routes/scheduling.routes";
 import { accountRoutes } from "./accounts.routes";
+import { authenticateRoutes } from "./authencate.routes";
 import { featureRoutes } from "./features.routes";
 import { homeRoutes } from "./home.routes";
 import { openingHoursRoutes } from "./openinghours.routes";
@@ -12,5 +13,6 @@ routes.use("/scheduling", schedulingRoutes);
 routes.use("/users", accountRoutes);
 routes.use("/features", featureRoutes);
 routes.use("/openinghours", openingHoursRoutes);
+routes.use(authenticateRoutes);
 
 export { routes };

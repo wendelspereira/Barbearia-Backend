@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { AuthenticateUseCase } from "./authenticateUseCase";
+import { AuthenticateUseCase } from "./authenticateUserUseCase";
 
-class AuthenticateController {
+class AuthenticateUserController {
   async handle(request: Request, response: Response): Promise<Response>{
     const { email, password } = request.body;
     const authenticateUseCase = new AuthenticateUseCase();
@@ -11,4 +11,4 @@ class AuthenticateController {
   }
 }
 
-export { AuthenticateController };
+export { AuthenticateUserController };

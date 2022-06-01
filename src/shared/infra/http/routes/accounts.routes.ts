@@ -10,5 +10,6 @@ const authenticateController = new AuthenticateUserController();
 
 accountRoutes.post("/", ensureAuthenticated, createUserController.handle);
 accountRoutes.post("/auth", authenticateController.handle);
+accountRoutes.get("/auth", (request,response)=>response.send(`rapariga`));
 
 export { accountRoutes };

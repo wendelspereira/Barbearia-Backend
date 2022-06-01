@@ -5,6 +5,7 @@ import "express-async-errors";
 import { routes } from "../http/routes";
 import { AppError } from "../../errors/AppError";
 import createConnection from "../typeorm";
+import cors from "cors"
 
 dotenv.config();
 const app = express();
@@ -14,6 +15,7 @@ createConnection()
   .then(() => {
     console.log('Connected with database')
     app.use(express.json());
+    app.use(cors)
     app.use(routes);
     app.use(
       (

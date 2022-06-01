@@ -4,6 +4,6 @@ import { AuthenticateUserController } from "../../../../modules/accounts/useCase
 const authenticateRoutes = Router();
 const authenticateUserController = new AuthenticateUserController()
 
-authenticateRoutes.post("/sessions", authenticateUserController.handle)
+authenticateRoutes.post("/", authenticateUserController.handle)
 
 export {authenticateRoutes}

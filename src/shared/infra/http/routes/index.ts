@@ -16,3 +16,4 @@ routes.use("/openinghours", openingHoursRoutes);
 routes.use(authenticateRoutes);
 
 export { routes };
+

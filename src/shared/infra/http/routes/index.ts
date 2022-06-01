@@ -13,7 +13,7 @@ routes.use("/scheduling", schedulingRoutes);
 routes.use("/users", accountRoutes);
 routes.use("/features", featureRoutes);
 routes.use("/openinghours", openingHoursRoutes);
-// routes.use(authenticateRoutes);
+routes.use(authenticateRoutes);
 
 export { routes };
 

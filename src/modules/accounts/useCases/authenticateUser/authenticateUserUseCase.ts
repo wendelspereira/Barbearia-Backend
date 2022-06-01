@@ -16,6 +16,8 @@ class AuthenticateUseCase {
   async execute({ email, password }: IAuthRequest) {
     const userRepository = new UserRepository();
 
+    console.log(email, password, "use case aqui? oiiiiii!")
+
     const user = await userRepository.findByEmail(email);
 
     if (!user) {

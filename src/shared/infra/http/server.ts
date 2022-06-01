@@ -15,7 +15,7 @@ createConnection()
   .then(() => {
     console.log('Connected with database')
     app.use(express.json());
-    app.use(cors)
+    app.use(cors())
     app.use(routes);
     app.use(
       (

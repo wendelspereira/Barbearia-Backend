@@ -1,6 +1,6 @@
-import { UserRepository } from "../../infra/typeorm/repository/UserRepository";
+import { UserRepository } from "../../../infra/typeorm/repository/UserRepository";
 import { hash } from "bcrypt";
-import { IUserDTO } from "../../repository/IUser";
+import { IUserDTO } from "src/modules/accounts/dtos/IUser";
 
 class CreateUserUseCase {
   async execute({ name, email, password }: IUserDTO) {

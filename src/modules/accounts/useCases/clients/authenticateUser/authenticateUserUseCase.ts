@@ -1,8 +1,8 @@
-import { IAuthRequest } from "../../dtos/IAuthRequest";
-import { UserRepository } from "../../infra/typeorm/repository/UserRepository";
+import { IAuthRequest } from "../../../dtos/IAuthRequest";
+import { UserRepository } from "../../../infra/typeorm/repository/UserRepository";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
-import { AppError } from "../../../../shared/errors/AppError";
+import { AppError } from "../../../../../shared/errors/AppError";
 
 interface ITokenResponse {
   user: {
@@ -15,8 +15,6 @@ interface ITokenResponse {
 class AuthenticateUseCase {
   async execute({ email, password }: IAuthRequest) {
     const userRepository = new UserRepository();
-
-    console.log(email, password, "use case aqui? oiiiiii!")
 
     const user = await userRepository.findByEmail(email);
 

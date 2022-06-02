@@ -1,5 +1,6 @@
+import { IUserDTO } from "src/modules/accounts/dtos/IUser";
 import { getRepository, Repository } from "typeorm";
-import { IUserRepository, IUserDTO } from "../../../repository/IUser";
+import { IUserRepository } from "../../../repository/IUser";
 import { User } from "../entities/User.entity";
 
 class UserRepository implements IUserRepository {

@@ -1,9 +1,9 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ObjectIdColumn } from "typeorm";
 import { v4 as uuidv4 } from "uuid";
 
 @Entity("features")
 class Feature {
-  @PrimaryColumn()
+  @ObjectIdColumn()
   id!: string;
 
   @Column()

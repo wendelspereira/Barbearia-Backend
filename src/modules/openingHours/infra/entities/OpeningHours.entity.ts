@@ -1,9 +1,12 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity } from "typeorm";
+import { DoW } from "./Dow.entity";
 
-@Entity("openinghours")
+@Entity("openingHours")
 class OpeningHours {
-  @PrimaryColumn()
-  openingHoursJSON!: string;
+  @Column(type => DoW)
+  dows!: DoW[];
 }
 
 export { OpeningHours };
+
+

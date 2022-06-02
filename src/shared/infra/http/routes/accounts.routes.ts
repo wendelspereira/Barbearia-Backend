@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { AuthenticateUserController } from "../../../../modules/accounts/useCases/authenticateUser/authenticateUserController";
-import { CreateUserController } from "../../../../modules/accounts/useCases/createUser/createUserController";
+import { AuthenticateUserController } from "../../../../modules/accounts/useCases/clients/authenticateUser/authenticateUserController";
+import { CreateUserController } from "../../../../modules/accounts/useCases/clients/createUser/createUserController";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const accountRoutes = Router();

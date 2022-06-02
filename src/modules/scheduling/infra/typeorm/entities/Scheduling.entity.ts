@@ -1,21 +1,21 @@
-import { IServiceDTO } from "../../../dtos/ICreateScheduling";
 import { v4 as uuidv4 } from "uuid";
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ObjectIdColumn } from "typeorm";
+import { Client } from "src/modules/accounts/infra/typeorm/entities/Client.entity";
+import { Feature } from "src/modules/features/infra/typeorm/entities/Feature.entity";
 
 @Entity("schedulings")
 class Scheduling {
-  @PrimaryColumn()
+  @ObjectIdColumn()
   id?: string;
 
   @Column()
-  client?: string; //refactory
+  client!: Client;
   
   @Column()
-  services!: string; //refactory
-  // services!: IServiceDTO[];
+  services!: Feature[];
   
   @Column()
-  schedulingHours!: string;
+  schedulingHours!: Scheduling[];
 
   @CreateDateColumn()
   created_at!: Date;

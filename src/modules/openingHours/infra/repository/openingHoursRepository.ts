@@ -1,40 +1,36 @@
-import {
-  ICreateOpenHoursDTO,
-  IListOpenHoursDTO,
-} from "../../dtos/ICreateOpenHoursDTO";
+import {getMongoManager} from "typeorm";
 import { IOpeningHoursRepository } from "../../repository/IOpeningHoursRepository";
-import { OpeningHours } from "../entities/OpeningHours.entity";
-import { getRepository, Repository } from "typeorm";
-import { AppError } from "../../../../shared/errors/AppError";
+
 
 class OpeningHoursRepository implements IOpeningHoursRepository {
-  private repository: Repository<OpeningHours>;
-  constructor() {
-    this.repository = getRepository(OpeningHours);
+  
+
+  async create(data: any): Promise<void> {
+    const openingHours = new OpeningHoursRepository()
+    
   }
 
-  async create(data: ICreateOpenHoursDTO): Promise<void> {
-    const oldOpeningHours = await this.list()
-    if(oldOpeningHours){
-      await this.repository
-        .createQueryBuilder()
-        .delete()
-        .from(OpeningHours)
-        .execute()
-    }
-    const openingHoursJSON = JSON.stringify(data);
-    const openingHours = this.repository.create({ openingHoursJSON });
-    await this.repository.save(openingHours);
-  }
+  async list() {
 
-  async list(): Promise<IListOpenHoursDTO | undefined> {
-    const find = await this.repository.findOne();
-    if (!find) {
-      return;
-    }
-
-    return JSON.parse(find.openingHoursJSON);
+    return 
   }
 }
 
 export { OpeningHoursRepository };
+
+
+
+// const user = new User();
+// user.firstName = "Timber";
+// user.lastName = "Saw";
+// user.profile = new Profile();
+// user.profile.about = "About Trees and Me";
+// user.profile.education = "Tree School";
+// user.profile.career = "Lumberjack";
+// user.photos = [
+//     new Photo("me-and-trees.jpg", "Me and Trees", 100),
+//     new Photo("me-and-chakram.jpg", "Me and Chakram", 200),
+// ];
+
+// const manager = getMongoManager();
+// await manager.save(user);

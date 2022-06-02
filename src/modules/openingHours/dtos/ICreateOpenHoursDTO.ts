@@ -1,5 +1,5 @@
-interface IDays {
-  days:
+interface IDoW {
+  DoW:
     | "sunday"
     | "monday"
     | "tuesday"
@@ -9,13 +9,14 @@ interface IDays {
     | "satuday";
 }
 
-interface IOpeningHours {
-  day: IDays;
-  hours: [{ opening: string; closure: string }];
-}
+interface IOpeningHours {}
 
 interface ICreateOpenHoursDTO {
-  openinghours: IOpeningHours[];
+  openinghours: [
+    { dow: [
+      {hours: [{ opening: string; closure: string }]}
+    ]}
+  ];
 }
 
 interface IListOpenHoursDTO {

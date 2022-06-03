@@ -7,7 +7,7 @@ const openingHoursRoutes = Router();
 const createOpeningHoursController = new CreateOpeningHoursController()
 const listOpeningHoursController = new ListOpeningHoursController()
 
-openingHoursRoutes.post("/", ensureAuthenticated, createOpeningHoursController.handle)
+openingHoursRoutes.post("/", createOpeningHoursController.handle)
 openingHoursRoutes.get("/", listOpeningHoursController.handle)
 
 export { openingHoursRoutes };

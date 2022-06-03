@@ -1,10 +1,12 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
-import { Hours } from "./Hours.entity";
+import { Column, Entity } from "typeorm";
+import { Shifts } from "./Shifts.entity";
 
 @Entity("dow")
 class DoW {
-  @Column(type => Hours)
-  hours!: Hours[]
+  @Column()
+  dow!: "sunday"  | "monday"  | "tuesday"  | "wednesday"  | "thursday"  | "friday"  | "satuday";
+  @Column(type => Shifts)
+  hours!: Shifts[]
 }
 
 export { DoW };

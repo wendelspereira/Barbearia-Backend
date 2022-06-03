@@ -1,3 +1,4 @@
+
 import { createConnection, Connection } from "typeorm";
 require("dotenv").config();
 
@@ -7,13 +8,16 @@ const extensionFile = process.env.NODE_ENV === "development" ? "ts" : "js";
 const config: any = {
   type: "mongodb",
   url: process.env.DATABASE_URI,
-  synchronize: false,
+  useNewUrlParser: true,
+  synchronize: true,
+  logging: true,
   ssl: true,
-  extra: {
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  },
+  useUnifiedTopology: true,
+  // extra: {
+  //   ssl: {
+  //     rejectUnauthorized: false,
+  //   },
+  // },
 
   entities: [`${rootDir}/**/*.entity.${extensionFile}`],
   migrations: [`${rootDir}/**/migrations/*.${extensionFile}`],

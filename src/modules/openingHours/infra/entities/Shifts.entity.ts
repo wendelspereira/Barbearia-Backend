@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryColumn } from "typeorm";
 
 @Entity("shifts")
 class Shifts {
-  @Column()
+  @PrimaryColumn()
   opening!: string
   @Column()
   closure!: string

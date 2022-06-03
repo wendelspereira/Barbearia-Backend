@@ -1,10 +1,9 @@
-import { Column, CreateDateColumn, Entity, ObjectIdColumn } from "typeorm";
-import { v4 as uuidv4 } from "uuid";
+import { Column, CreateDateColumn, Entity, ObjectID, ObjectIdColumn } from "typeorm";
 
 @Entity("features")
 class Feature {
   @ObjectIdColumn()
-  id!: string;
+  id?: ObjectID;
 
   @Column()
   name!: string;
@@ -23,12 +22,6 @@ class Feature {
   
   @CreateDateColumn()
   created_at!: Date;
-
-  constructor() {
-    if (!this.id) {
-      this.id = uuidv4();
-    }
-  }
 }
 
 export { Feature };

@@ -1,24 +1,26 @@
-import {getMongoManager} from "typeorm";
+import { getMongoManager } from "typeorm";
+import { ICreateOpenHoursDTO } from "../../dtos/ICreateOpenHoursDTO";
 import { IOpeningHoursRepository } from "../../repository/IOpeningHoursRepository";
-
+import { OpeningHours } from "../entities/OpeningHours.entity";
+import { People } from "../entities/people.entity";
 
 class OpeningHoursRepository implements IOpeningHoursRepository {
-  
-
-  async create(data: any): Promise<void> {
-    const openingHours = new OpeningHoursRepository()
-    
+  async create(data: ICreateOpenHoursDTO[]): Promise<void> {
+    const people = new People();
+    people.name = 'wendel'
+    people.idade = 1
+    try {
+      const manager = getMongoManager();
+      await manager.save(people);
+    } catch (err) {console.log(err)}
   }
 
   async list() {
-
-    return 
+    return;
   }
 }
 
 export { OpeningHoursRepository };
-
-
 
 // const user = new User();
 // user.firstName = "Timber";

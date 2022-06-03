@@ -1,5 +1,10 @@
-interface IDoW {
-  DoW:
+interface IHours {
+  opening: string;
+  closure: string;
+}
+
+interface ICreateOpenHoursDTO {
+  dow:
     | "sunday"
     | "monday"
     | "tuesday"
@@ -7,20 +12,24 @@ interface IDoW {
     | "thursday"
     | "friday"
     | "satuday";
+  hours: IHours[];
 }
 
-interface IOpeningHours {}
+export { ICreateOpenHoursDTO };
 
-interface ICreateOpenHoursDTO {
-  openinghours: [
-    { dow: [
-      {hours: [{ opening: string; closure: string }]}
-    ]}
-  ];
-}
-
-interface IListOpenHoursDTO {
-  openinghours: IOpeningHours[];
-}
-
-export { ICreateOpenHoursDTO, IListOpenHoursDTO };
+// [
+//   {
+//     dow: "sunday",
+//     hours: [
+//       { opening: "08:00", closure: "12:00" },
+//       { opening: "14:00", closure: "17:00" },
+//     ],
+//   },
+//   {
+//     dow: "tuesday",
+//     hours: [
+//       { opening: "08:00", closure: "12:00" },
+//       { opening: "14:00", closure: "17:00" },
+//     ],
+//   },
+// ];

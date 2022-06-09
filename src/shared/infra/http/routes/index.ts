@@ -1,7 +1,7 @@
 import express from "express";
 import { accountRoutes } from "../routes/accounts.routes";
-// import { authenticateRoutes } from "./authencate.routes";
 import { homeRoutes } from "./home.routes";
+// import { authenticateRoutes } from "./authencate.routes";
 // import { schedulingRoutes } from "../routes/scheduling.routes";
 // import { featureRoutes } from "./features.routes";
 // import { openingHoursRoutes } from "./openinghours.routes";

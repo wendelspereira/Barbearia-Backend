@@ -1,10 +1,10 @@
 import { UserRepository } from "../../../../accounts/infra/mongoose/repository/UserRepository";
-import { IUserDTO } from "src/modules/accounts/dtos/ICreateUser";
+import { ICreateUserDTO } from "../../../dtos/ICreateUser";
 import { User } from "../../../entities/User";
 import { AppError } from "../../../../../shared/errors/AppError";
 
 class CreateUserUseCase {
-  async execute(data: IUserDTO): Promise<User> {
+  async execute(data: ICreateUserDTO): Promise<User> {
     const userRepository = new UserRepository();
     const { email } = data;
     const userAlreadyExists = await userRepository.findByEmail(email);

@@ -1,4 +1,4 @@
-import { ICreateClientDTO } from "src/modules/accounts/dtos/ICreateClient";
+// import { ICreateClientDTO } from "../../../dtos/ICreateUser";
 import {IClientRepository } from "../../../repository/ICreateUser";
 import { Client } from "../schemas/Client";
 

@@ -1,4 +1,4 @@
-import { IUserDTO } from "src/modules/accounts/dtos/ICreateUser";
+import { ICreateUserDTO } from "../../../dtos/ICreateUser";
 import { AppError } from "../../../../../shared/errors/AppError";
 import { IUserRepository } from "../../../repository/ICreateUser";
 import { UserModel } from "../schemas/User";
@@ -6,7 +6,7 @@ import { User } from "../../../entities/User";
 import { compare } from "bcrypt";
 
 class UserRepository implements IUserRepository {
-  async create(data: IUserDTO): Promise<User> {
+  async create(data: ICreateUserDTO): Promise<User> {
     const user = new UserModel({ ...data });
     const result = await user.save();
     return result;

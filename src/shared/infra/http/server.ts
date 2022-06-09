@@ -25,4 +25,4 @@ app.use(
   }
 );
 
-app.listen(process.env.PORT || 9999, () => console.log("Server is running!"));
+app.listen(3333 || process.env.PORT, () => console.log("Server is running!"));

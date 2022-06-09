@@ -1,9 +1,7 @@
-import { ObjectId } from "mongodb";
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 const clientSchema = new Schema({
-  id: ObjectId,
   name: String,
   idade: Number,
   phoneNumber: String,

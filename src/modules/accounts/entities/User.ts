@@ -1,7 +1,5 @@
-import { ObjectId } from "mongodb";
-
 export class User {
-  id!: ObjectId;
+  id?: string;
   name!: string;
   password?: string;
   isAdmin!: boolean;

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AuthenticateUserController } from "../../../../modules/accounts/useCases/authenticateUser/authenticateUserController";
+import { AuthenticateUserController } from "../../../../modules/accounts/useCases/users/authenticateUser/authenticateUserController";
 import { CreateUserController } from "../../../../modules/accounts/useCases/users/createUser/createUserController";
 // import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 

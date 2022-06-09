@@ -1,13 +1,15 @@
 import { IUserDTO } from "src/modules/accounts/dtos/ICreateUser";
-// import { User } from "src/modules/accounts/entities/User";
 import { AppError } from "../../../../../shared/errors/AppError";
 import { IUserRepository } from "../../../repository/ICreateUser";
 import { UserModel } from "../schemas/User";
+import { User } from "../../../entities/User";
+import { compare } from "bcrypt";
 
 class UserRepository implements IUserRepository {
-  async create(data: IUserDTO): Promise<void> {
+  async create(data: IUserDTO): Promise<User> {
     const user = new UserModel({ ...data });
-    await user.save();
+    const result = await user.save();
+    return result;
   }
 
   async findById(id: string): Promise<any | undefined> {
@@ -15,7 +17,6 @@ class UserRepository implements IUserRepository {
     if (!user) {
       throw new AppError("User not found!");
     }
-
     return user;
   }
 
@@ -24,6 +25,26 @@ class UserRepository implements IUserRepository {
     if (!user) {
       throw new AppError("User not found!");
     }
+    return user;
+  }
+
+  async checkPassword(email: string, password: string): Promise<User> {
+    const user = await UserModel.findOne({ email: email }).select([
+      "name",
+      "password",
+    ]);
+
+    if (!user) {
+      throw new AppError("User doesn`t exists!");
+    }
+
+    const passwordMatch = await compare(password, user.password);
+    user.password = undefined;
+    
+    if (!passwordMatch) {
+      throw new AppError("Email or password is incorrect!", 401);
+    }
+
     return user;
   }
 }

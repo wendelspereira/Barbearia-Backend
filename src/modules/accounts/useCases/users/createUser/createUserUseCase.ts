@@ -1,14 +1,21 @@
 import { UserRepository } from "../../../../accounts/infra/mongoose/repository/UserRepository";
-import { hash } from "bcrypt";
 import { IUserDTO } from "src/modules/accounts/dtos/ICreateUser";
+import { User } from "../../../entities/User";
+import { AppError } from "../../../../../shared/errors/AppError";
 
 class CreateUserUseCase {
-  async execute(data: IUserDTO) {
+  async execute(data: IUserDTO): Promise<User> {
     const userRepository = new UserRepository();
-    const { password } = data.accountData;
-    const passwordHash = await hash(String(password), 8);
-    data.accountData.password = passwordHash
-    await userRepository.create(data);
+    const { email } = data;
+    const userAlreadyExists = await userRepository.findByEmail(email);
+
+    if (userAlreadyExists) {
+      throw new AppError("User already exists");
+    }
+
+    const result = await userRepository.create(data);
+    result.password = undefined;
+    return result;
   }
 }
 

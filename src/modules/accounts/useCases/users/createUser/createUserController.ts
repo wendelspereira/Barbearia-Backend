@@ -6,8 +6,8 @@ class CreateUserController {
   async handle(request: Request, response: Response) {
     const data: IUserDTO = request.body;
     const createUserUseCase = new CreateUserUseCase();
-    await createUserUseCase.execute(data);
-    return response.status(200).send();
+    const result = await createUserUseCase.execute(data);
+    return response.status(200).send(result);
   }
 }
 

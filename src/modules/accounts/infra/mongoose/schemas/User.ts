@@ -1,20 +1,39 @@
-import mongoose from "mongoose";
-import { ObjectId } from 'mongodb';
+import { mongoose } from "../../../../../database/index";
+import bcrypt from "bcrypt";
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
-  id: ObjectId,
-  personalData: {
-    name: String,
+const UserSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
   },
-  accountData: {
-    email: String,
-    password: String,
-    isAdmin: Boolean,
-    created_at: { type: Date, default: Date.now },
+  email: {
+    type: String,
+    required: true,
+    lowercase: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+    select: false,
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
+  created_at: {
+    type: Date,
+    default: Date.now,
   },
 });
 
-const UserModel = mongoose.model("User", userSchema);
+UserSchema.pre("save", async function(next) {
+  const hash = await bcrypt.hash(this.password, 10);
+  this.password = hash
+  next()
+});
+
+const UserModel = mongoose.model("User", UserSchema);
 
 export { UserModel };

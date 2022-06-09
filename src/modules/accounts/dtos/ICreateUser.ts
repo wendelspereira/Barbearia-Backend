@@ -1,13 +1,8 @@
 interface IUserDTO {
-  personalData: {
-    name: String,
-  },
-
-  accountData: {
-    email: String,
-    password: String,
-    isAdmin: Boolean,
-  },
+    name: string,
+    email: string,
+    password: string,
+    isAdmin?: boolean,
 }
 
 export { IUserDTO };

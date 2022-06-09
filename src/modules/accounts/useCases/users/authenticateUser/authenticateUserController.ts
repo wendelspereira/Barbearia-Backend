@@ -7,7 +7,7 @@ class AuthenticateUserController {
     const authenticateUseCase = new AuthenticateUseCase();
     const result = await authenticateUseCase.execute({ email, password });
     
-    return response.status(200).send(result);
+    return response.send(result);
   }
 }
 

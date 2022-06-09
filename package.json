@@ -7,7 +7,7 @@
     "tsc": "./node_modules/typescript/bin/tsc",
     "build": "tsc",
     "dev": "ts-node-dev --inspect --trace-warnings --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
-    "start": "node dist/src/shared/infra/http/server.js",
+    "start": "node dist/shared/infra/http/server.js",
     "push": "git add . && git commit -m git && git push origin master"
   },
   "keywords": [],

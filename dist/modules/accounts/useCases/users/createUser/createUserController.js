@@ -7,7 +7,7 @@ class CreateUserController {
         const data = request.body;
         const createUserUseCase = new createUserUseCase_1.CreateUserUseCase();
         const result = await createUserUseCase.execute(data);
-        return response.status(200).send(result);
+        return response.send(result);
     }
 }
 exports.CreateUserController = CreateUserController;

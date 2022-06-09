@@ -7,7 +7,7 @@ class AuthenticateUserController {
         const { email, password } = request.body;
         const authenticateUseCase = new authenticateUserUseCase_1.AuthenticateUseCase();
         const result = await authenticateUseCase.execute({ email, password });
-        return response.status(200).send(result);
+        return response.send(result);
     }
 }
 exports.AuthenticateUserController = AuthenticateUserController;

@@ -3,6 +3,7 @@ import { homeRoutes } from "./home.routes";
 import { accountRoutes } from "../routes/accounts.routes";
 import { featureRoutes } from "./feature.routes";
 import { schedulingRoutes } from "../routes/scheduling.routes";
+import { clientRoutes } from "../routes/clients.routes"
 // import { authenticateRoutes } from "./authencate.routes";
 // import { openingHoursRoutes } from "./openinghours.routes";
 
@@ -12,6 +13,7 @@ routes.use("/", homeRoutes);
 routes.use("/users", accountRoutes);
 routes.use("/features", featureRoutes);
 routes.use("/scheduling", schedulingRoutes);
+routes.use("/clients", clientRoutes);
 // routes.use(authenticateRoutes);
 // routes.use("/openinghours", openingHoursRoutes);
 

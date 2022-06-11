@@ -6,6 +6,7 @@ class CreateSchedulingController {
     const { client, services, schedulingHours } = request.body;
 
     const createSchedulingUseCase = new CreateSchedulingUseCase();
+    
 
     await createSchedulingUseCase.execute({
       client,

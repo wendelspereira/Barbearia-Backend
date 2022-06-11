@@ -1,14 +1,14 @@
 class Client {
   name!: string;
   lastName?: string;
-  idade?: string;
-  phoneNumber?: string;
+  birthDate?: Date;
+  phoneNumber!: string;
   address?: {
     street: string;
-    number: string;
+    number: number;
     district: string;
-    cidade: string;
-    estado: string;
+    city: string;
+    uf: string;
   };
   avatar?: string;
 }

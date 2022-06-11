@@ -9,13 +9,16 @@ const ClientSchema = new Schema({
 
   lastName: { type: String },
 
-  bithDate: { type: Date },
+  birthDate: { type: Date },
 
-  phoneNumber: { type: String },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
 
   address: {
     street: { type: String },
-    number: { type: String },
+    number: { type: Number },
     district: { type: String },
     city: { type: String },
     uf: { type: String },

@@ -19,6 +19,14 @@ class ClientRepository implements IClientRepository {
     return client;
   }
 
+  async find(): Promise<Client[] | undefined> {
+    const client = ClientModel.find();
+    if (!client) {
+      throw new AppError("Client not found!");
+    }
+    return client;
+  }
+
   async findByPhoneNumber(phoneNumber: string): Promise<any | undefined> {
     const client = ClientModel.findById({phoneNumber: phoneNumber });
     if (!client) {

@@ -1,9 +1,10 @@
 import { ICreateSchedulingDTO } from "../dtos/ICreateScheduling";
-import { Scheduling } from "../infra/typeorm/entities/Scheduling.entity";
+import { Scheduling } from "../entities/Scheduling";
 
 interface ISchedulingRepository {
-  create: (data: ICreateSchedulingDTO) => Promise<void>;
-  list: () => Promise<Scheduling[]>;
+  create: (data: ICreateSchedulingDTO) => Promise<Scheduling>;
+  list: () => Promise<Scheduling[] | undefined>;
 }
 
 export { ISchedulingRepository };
+  

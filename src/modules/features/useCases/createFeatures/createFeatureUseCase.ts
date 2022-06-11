@@ -1,6 +1,6 @@
 import { ICreateFeatureDTO } from "../../dtos/ICreateFeatureDTO";
-import { FeaturesRepository } from "../../infra/typeorm/repository/featuresRepository";
 import { AppError } from "../../../../shared/errors/AppError";
+import { FeatureRepository } from "../../infra/repository/FeatureRepository";
 
 class CreateFeatureUseCase {
   async execute({
@@ -10,15 +10,15 @@ class CreateFeatureUseCase {
     isAvailable,
     estimatedTime,
   }: ICreateFeatureDTO) {
-    const featuresRepository = new FeaturesRepository();
+    const featureRepository = new FeatureRepository();
 
-    const featuresAlreadyExists = await featuresRepository.findByName(name);
+    const featureAlreadyExists = await featureRepository.findByName(name);
 
-    if (featuresAlreadyExists) {
+    if (featureAlreadyExists) {
       throw new AppError("Feature already exists!");
     }
 
-    await featuresRepository.create({
+    await featureRepository.create({
       name,
       description,
       price,

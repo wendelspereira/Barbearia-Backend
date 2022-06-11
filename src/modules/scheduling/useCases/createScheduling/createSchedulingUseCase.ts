@@ -1,6 +1,5 @@
 import { ICreateSchedulingDTO } from "../../dtos/ICreateScheduling";
-import { SchedulingRepository } from "../../infra/typeorm/repository/SchedulingRepository";
-
+import { SchedulingRepository } from "../../infra/repository/SchedulingRepository"
 class CreateSchedulingUseCase {
     async execute({client, services, schedulingHours}: ICreateSchedulingDTO){
         const schedulingRepository = new SchedulingRepository()

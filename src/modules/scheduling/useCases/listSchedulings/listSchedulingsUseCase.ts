@@ -1,8 +1,8 @@
-import { Scheduling } from "../../infra/typeorm/entities/Scheduling.entity";
-import { SchedulingRepository } from "../../infra/typeorm/repository/SchedulingRepository";
+import { Scheduling } from "../../entities/Scheduling";
+import { SchedulingRepository } from "../../infra/repository/SchedulingRepository";
 
 class ListSchedulingsUseCase {
-  async execute(): Promise<Scheduling[]> {
+  async execute(): Promise<Scheduling[] | undefined> {
     const schedulingRepository = new SchedulingRepository();
     const schedulings = schedulingRepository.list();
     return schedulings;

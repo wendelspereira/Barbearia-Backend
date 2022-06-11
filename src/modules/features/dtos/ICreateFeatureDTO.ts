@@ -2,8 +2,8 @@ interface ICreateFeatureDTO {
   name: string;
   description: string;
   price: number;
-  estimatedTime: string;
-  isAvailable: boolean;
+  estimatedTime: number;
+  isAvailable?: boolean;
 }
 
 export { ICreateFeatureDTO };

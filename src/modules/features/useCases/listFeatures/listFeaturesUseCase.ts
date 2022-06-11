@@ -1,11 +1,10 @@
-import { ICreateFeatureDTO } from "../../dtos/ICreateFeatureDTO";
-import { FeaturesRepository } from "../../infra/typeorm/repository/featuresRepository";
+import { FeatureRepository } from "../../infra/repository/FeatureRepository";
 
 class ListFeaturesUseCase {
   async execute() {
-    const featuresRepository = new FeaturesRepository();
+    const featureRepository = new FeatureRepository();
 
-    const features = await featuresRepository.list();
+    const features = await featureRepository.list();
 
     return features;
   }

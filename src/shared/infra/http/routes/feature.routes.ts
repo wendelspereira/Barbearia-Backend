@@ -7,7 +7,6 @@ const featureRoutes = Router();
 
 const createFeatureController = new CreateFeatureController();
 const listFeatureController = new ListFeaturesController();
-
 featureRoutes.post("/", ensureAuthenticated, createFeatureController.handle);
 featureRoutes.get("/", listFeatureController.handle);
 
